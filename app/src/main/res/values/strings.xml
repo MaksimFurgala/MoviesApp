@@ -16,4 +16,10 @@
     <string name="explorer_bottom_menu">Обзор</string>
     <string name="favorites_bottom_menu">Любимое</string>
     <string name="cart_bottom_menu">Корзина</string>
+    <string name="backBtnDescription">назад</string>
+    <string name="share_btn_description">поделиться</string>
+    <string name="add_to_watchlist_btn_description">добавить в плейлист</string>
+    <string name="description_film">Описание</string>
+    <string name="actors">Актеры</string>
+    <string name="watch_now_btn">Смотреть</string>
 </resources>

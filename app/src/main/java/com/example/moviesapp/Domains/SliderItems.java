@@ -1,61 +1,61 @@
 package com.example.moviesapp.Domains;
 
 public class SliderItems {
-    private String image;
-    private String name;
-    private String genre;
-    private String age;
-    private String year;
-    private String time;
+    private String Image;
+    private String Name;
+    private String Genre;
+    private String Age;
+    private String Year;
+    private String Time;
 
     public SliderItems() {
     }
 
     public String getGenre() {
-        return genre;
+        return Genre;
     }
 
     public void setGenre(String genre) {
-        this.genre = genre;
+        this.Genre = genre;
     }
 
     public String getImage() {
-        return image;
+        return Image;
     }
 
     public void setImage(String image) {
-        this.image = image;
+        this.Image = image;
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.Name = name;
     }
 
     public String getAge() {
-        return age;
+        return Age;
     }
 
     public void setAge(String age) {
-        this.age = age;
+        this.Age = age;
     }
 
     public String getYear() {
-        return year;
+        return Year;
     }
 
     public void setYear(String year) {
-        this.year = year;
+        this.Year = year;
     }
 
     public String getTime() {
-        return time;
+        return Time;
     }
 
     public void setTime(String time) {
-        this.time = time;
+        this.Time = time;
     }
 }

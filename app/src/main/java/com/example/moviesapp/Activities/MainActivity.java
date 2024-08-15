@@ -8,12 +8,15 @@ import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.moviesapp.Adapters.FilmListAdapter;
 import com.example.moviesapp.Adapters.SlidersAdapter;
+import com.example.moviesapp.Domains.Film;
 import com.example.moviesapp.Domains.SliderItems;
 import com.example.moviesapp.databinding.ActivityMainBinding;
 import com.google.firebase.database.DataSnapshot;
@@ -50,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         initBanner();
+        initTopFilmsList();
+        initNewFilmsList();
     }
 
     /**
@@ -66,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
-                    for (DataSnapshot issue:snapshot.getChildren()) {
+                    for (DataSnapshot issue : snapshot.getChildren()) {
                         items.add(issue.getValue(SliderItems.class));
                     }
                     castomizeViewPager2(items);
@@ -81,8 +86,73 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void initTopFilmsList() {
+        // Получаем ссылку на БД для дальнейшей работы.
+        DatabaseReference dbRef = database.getReference("Items");
+        binding.progressBarTop.setVisibility(View.VISIBLE);
+        ArrayList<Film> items = new ArrayList<>();
+
+        // Добавляем слушатель для получения данных из БД.
+        dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot issue : snapshot.getChildren()) {
+                        items.add(issue.getValue(Film.class));
+                    }
+                    if (!items.isEmpty()) {
+                        binding.recyclerViewTopMovies.setLayoutManager(new LinearLayoutManager(MainActivity.this,
+                                LinearLayoutManager.HORIZONTAL,
+                                false));
+                        binding.recyclerViewTopMovies.setAdapter(new FilmListAdapter(items));
+                    }
+
+                    binding.progressBarTop.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void initNewFilmsList() {
+        // Получаем ссылку на БД для дальнейшей работы.
+        DatabaseReference dbRef = database.getReference("NewFilms");
+        binding.progressBarNewMovies.setVisibility(View.VISIBLE);
+        ArrayList<Film> items = new ArrayList<>();
+
+        // Добавляем слушатель для получения данных из БД.
+        dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot issue : snapshot.getChildren()) {
+                        items.add(issue.getValue(Film.class));
+                    }
+                    if (!items.isEmpty()) {
+                        binding.recyclerViewNewMovies.setLayoutManager(new LinearLayoutManager(MainActivity.this,
+                                LinearLayoutManager.HORIZONTAL,
+                                false));
+                        binding.recyclerViewNewMovies.setAdapter(new FilmListAdapter(items));
+                    }
+
+                    binding.progressBarNewMovies.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
     /**
      * Кастомизация слайдера ViewPager2.
+     *
      * @param items - элементы слайдера
      */
     private void castomizeViewPager2(ArrayList<SliderItems> items) {
@@ -98,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void transformPage(@NonNull View page, float position) {
                 float r = 1 - Math.abs(position);
-                page.setScaleY(0.85f + r*0.15f);
+                page.setScaleY(0.85f + r * 0.15f);
             }
         });
 
