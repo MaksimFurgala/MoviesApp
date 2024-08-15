@@ -5,8 +5,14 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
-activity = "1.8.0"
+activity = "1.9.1"
 constraintlayout = "2.1.4"
+viewpager2 = "1.1.0"
+glide = "5.0.0-rc01"
+chipNavigationBar = "1.4.0"
+blurView = "version-2.0.5"
+googleGmsGoogleServices = "4.4.2"
+firebaseDatabase = "21.0.0"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -16,7 +22,13 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+viewPager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewpager2" }
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide"}
+chipNavigationBar = { group = "com.github.ismaeldivita", name = "chip-navigation-bar", version.ref = "chipNavigationBar"}
+blurView = { group = "com.github.Dimezis", name = "BlurView", version.ref = "blurView" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 

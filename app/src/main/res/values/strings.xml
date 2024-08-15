@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">MoviesApp</string>
+    <string name="intro_title">Фильмы\nКристофера Нолана</string>
+    <string name="intro_description">Смотрите самые лучшие фильмы Кристофера Нолана, в самом высоком HD качестве.\nУ нас можно найти фильмы из жанров: фантастика, боевик, драма и многое другое.</string>
+    <string name="intro_get_started_btn">Начать просмотр</string>
+    <string name="add_to_watch_list">Добавить</string>
+    <string name="poster_slider">постер</string>
+    <string name="email">furgala.maxim@yandex.ru</string>
+    <string name="title_welcome">Привет, Максим</string>
+    <string name="hint_search_film">Искать фильмы…</string>
+    <string name="profile_photo">Фото профиля</string>
+    <string name="the_best_films_label">Лучшие</string>
+    <string name="all_films_label">Все фильмы</string>
+    <string name="new_films_label">Новинки</string>
+    <string name="profile_bottom_menu">Профиль</string>
+    <string name="explorer_bottom_menu">Обзор</string>
+    <string name="favorites_bottom_menu">Любимое</string>
+    <string name="cart_bottom_menu">Корзина</string>
 </resources>
