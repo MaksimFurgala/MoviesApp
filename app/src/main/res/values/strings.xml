@@ -22,4 +22,8 @@
     <string name="description_film">Описание</string>
     <string name="actors">Актеры</string>
     <string name="watch_now_btn">Смотреть</string>
+    <string name="kinopoisk_rate">Кинопоиск: %d</string>
+    <string name="film_times">%d - %s</string>
+    <string name="youtube_url">https://www.youtube.com/watch?v=</string>
+    <string name="vnd_youtube">vnd.youtube:</string>
 </resources>

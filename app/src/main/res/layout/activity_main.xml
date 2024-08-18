@@ -92,7 +92,7 @@
 
                 <ProgressBar
                     android:id="@+id/progressBarBanner"
-                    style="?android:attr/progressBarStyle"
+                    android:theme="@style/progressBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -142,7 +142,7 @@
 
                 <ProgressBar
                     android:id="@+id/progressBarTop"
-                    style="?android:attr/progressBarStyle"
+                    android:theme="@style/progressBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -189,7 +189,7 @@
 
                 <ProgressBar
                     android:id="@+id/progressBarNewMovies"
-                    style="?android:attr/progressBarStyle"
+                    android:theme="@style/progressBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
